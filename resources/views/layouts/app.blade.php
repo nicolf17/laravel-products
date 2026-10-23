@@ -93,7 +93,7 @@
             border: 1px solid var(--border);
             border-radius: 28px;
             box-shadow: var(--shadow);
-            padding: 28px;
+            padding: 26px;
         }
 
         .alert-success {
