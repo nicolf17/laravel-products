@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use App\Services\ProductService;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -15,8 +16,11 @@ class ProductController extends Controller
     public function index()
     {
         $products = $this->productService->paginate();
+        $totalProducts = Product::count();
+        $lowStock = Product::where('stock', '<', 5)->count();
+        $totalInventoryValue = Product::sum(DB::raw('price * stock'));
 
-        return view('products.index', compact('products'));
+        return view('products.index', compact('products', 'totalProducts', 'lowStock', 'totalInventoryValue'));
     }
 
     public function create()
