@@ -416,8 +416,8 @@
     <div class="app-shell">
         <header class="topbar">
             <div class="brand">
-                <div class="brand-mark">P</div>
-                Products Hub
+                <div class="brand-mark">L</div>
+                Laravel
             </div>
             <div class="nav-pill">Inventory dashboard</div>
         </header>
